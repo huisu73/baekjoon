@@ -5,27 +5,17 @@ class Main {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
-        int[] N_arr = new int[N];
-        HashSet<Integer> N_set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
         for (int i = 0; i < N; i++) {
-            N_arr[i] = sc.nextInt();
-            N_set.add(N_arr[i]);
+            set.add(sc.nextInt());
         }
 
         int M = sc.nextInt();
-        int[] M_arr = new int[M];
-        
-        for (int i = 0; i < M; i++) {
-            M_arr[i] = sc.nextInt();
-        }
 
-        for (int i = 0; i < M_arr.length; i++) {
-            if (N_set.contains(M_arr[i])) {
-                System.out.print("1 ");
-            } else {
-                System.out.print("0 ");
-            }
+        for (int i = 0; i < M; i++) {
+            int x = sc.nextInt();
+            System.out.print(set.contains(x) ? "1 " : "0 ");
         }
     }
 }
