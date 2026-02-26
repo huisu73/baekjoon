@@ -4,7 +4,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
 
         int n = Integer.parseInt(br.readLine());
@@ -20,12 +19,14 @@ public class Main {
                 stk.push(st.nextToken());
 
             sb.append("Case #").append(tc++).append(": ");
-            while (!stk.empty())
-                sb.append(stk.pop()).append(" ");
+            
+            while (!stk.empty()) {
+                sb.append(stk.pop());
+                if (!stk.empty()) sb.append(" ");
+            }
             sb.append("\n");
         }
 
-        bw.write(sb.toString());
-        bw.flush();
+        System.out.print(sb.toString());
     }
 }
