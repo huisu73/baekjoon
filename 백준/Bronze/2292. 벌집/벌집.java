@@ -9,14 +9,11 @@ public class Main {
         int start = 1;
         int cnt = 0;
 
-        while (true) {
+        while (start < n) {
             start += (6 * cnt);
-            if (start >= n) {
-                break;
-            } else {
-                cnt++;
-            }
+            cnt++;
         }
+        
         System.out.println(cnt + 1);
     }
 }
